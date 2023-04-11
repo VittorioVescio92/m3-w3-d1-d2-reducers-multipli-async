@@ -1,6 +1,7 @@
 import { Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeFromFavouritesAction } from "../redux/actions";
 
 const Company = ({ company, index }) => {
   const dispatch = useDispatch();
@@ -13,7 +14,7 @@ const Company = ({ company, index }) => {
         <Button
           variant="danger"
           onClick={() => {
-            dispatch({ type: "DELETE", payload: index });
+            dispatch(removeFromFavouritesAction(index));
           }}
         >
           Elimina dai Preferiti
